@@ -1,39 +1,81 @@
-# DJS03 Project Brief: Book Connect - Abstractions
+Book Connect: A Modular Book Browsing Application
+Welcome to Book Connect - a modular book browsing application designed to provide users with a smooth book discovery experience while showcasing clean code and thoughtful abstraction principles.
 
-Dive into the delightful world of "Book Connect," where literary adventures await at your fingertips! Browse, explore, and uncover your next great read from a vast, vibrant collection. Whether you're a fan of thrilling mysteries, epic fantasies, or heartwarming romances, "Book Connect" brings the magic of books directly to you. Happy reading! 
+Overview
+Book Connect allows users to browse a diverse collection of books, search by genre or author, and customize the visual theme for an optimized reading experience. This project focuses on organizing code using object-oriented principles, simplifying future modifications, and enhancing readability.
 
-The "Book Connect" project provides an opportunity for students to refine a fully functional version of an application. The focus of this project is to enhance the code's maintainability, extendibility, and readability by applying concepts of objects and functions for abstraction. This will not only streamline future modifications but also consolidate students' understanding of higher-level programming concepts, including documentation, Styleguides, and abstraction principles.
+Table of Contents
+Features
+Project Structure
+Installation
+Usage
+Modules Overview
+Contributing
+License
+Features
+Modular Book Management: Organize books, authors, and genres effectively with the ability to paginate book listings.
+Search & Filter: Easily find books by genre, author, or title using an intuitive search form.
+Dynamic Theme Customization: Users can toggle between light and dark themes based on preference.
+Abstraction & Modularity: The codebase is structured using OOP principles, allowing for seamless refactoring and scalability.
+Project Structure
+This project is divided into modular components to ensure code readability, maintainability, and extensibility:
 
-![alt text](image.png)
+bash
+Copy code
+- modules/
+  - state.js            # Handles application state (books, authors, genres, pagination)
+  - dom.js              # Manages DOM manipulation and dynamic element creation
+  - bookList.js         # Manages book listings, pagination, and list rendering
+  - search.js           # Manages search and filter functionality
+  - theme.js            # Handles theme selection and application
+- app.js                # Main application initialization and event listener setup
+- data.js               # Data storage for books, authors, genres, and configuration
+Installation
+Clone this repository:
+bash
+Copy code
+git clone https://github.com/username/book-connect.git
+Navigate into the project directory:
+bash
+Copy code
+cd book-connect
+Open index.html in your preferred browser to run the app.
+Usage
+Browse Books: Use pagination controls to explore the full catalog.
+Search by Genre/Author: Open the search form and select desired filters.
+Change Theme: Open the settings menu and switch between light and dark themes.
+Modules Overview
+1. state.js
+Manages the application's state, including books, authors, genres, pagination settings, and search results.
 
-#### Goals
+2. dom.js
+Contains utility functions for creating and updating DOM elements, including:
 
-- **Refactor Existing Code**: Analyse and refactor the given JavaScript and HTML code to improve its structure using objects and functions.
-- **Implement Abstraction**: Use abstraction to hide the complex reality while exposing only the necessary parts. This involves creating more generic functions that can perform tasks in a more flexible way.
-- **Documentation**: Write clear comments and documentation for the new code structure to explain the purpose and functionality of code blocks, functions, and objects.
-- **Follow Styleguides**: Adhere to established coding conventions and Styleguides to ensure code readability and maintainability.
+createBookPreview(book, authors): Generates book preview buttons.
+createOptionElement(value, text): Creates dropdown options for filters.
+3. bookList.js
+Responsible for rendering books and handling pagination:
 
-#### Tasks
+renderBookList(books): Renders a paginated list of books.
+updateShowMoreButton(): Updates pagination controls based on remaining items.
+4. search.js
+Handles search and filtering functionality:
 
-1. **Code Analysis**: Start by understanding the current implementation of the "Book Connect" application, including its HTML structure and JavaScript functionality.
-2. **Plan Refactoring**: Identify sections of the code that can be made more abstract and modular. Look for patterns and repetitive code that can be simplified.
-3. **Implement Abstraction**:
-   - **Objects**: Define objects to represent key elements of the application, such as books, authors, and genres. Utilise the provided data (e.g., `authors`, `genres`, `books`) to populate these objects.
-   - **Functions**: Create functions that handle repetitive tasks, such as rendering the book list, handling user interactions, and applying filters.
-4. **Enhance Functionality**: Ensure that the application remains fully functional after refactoring. Test all features to confirm that users can still search, filter, and view books as intended.
-5. **Documentation and Comments**: Throughout the refactoring process, document your code. Provide comments that explain the purpose and functionality of objects and functions.
-6. **Adherence to Styleguides**: Ensure your code follows JavaScript and HTML coding standards and best practices for readability and maintainability.
+setupSearchForm(): Initializes search form and dropdowns.
+handleSearch(filters): Filters book list based on user-selected criteria.
+5. theme.js
+Applies user-selected themes (light or dark) by adjusting root CSS variables.
 
-#### Discussion and Reflection
+6. app.js
+Main entry point of the app. Initializes the application state, sets up event listeners, and coordinates different modules.
 
-After completing the tasks, prepare a brief presentation for your coaching group on the following:
-- The rationale behind the refactoring decisions made, including the choice of objects and functions.
-- How abstraction has made the code more maintainable and extendable.
-- Any challenges faced during the refactoring process and how they were overcome.
-- Reflections on how this exercise has deepened your understanding of JavaScript programming concepts.
+Contributing
+To contribute to this project:
 
-#### Submission Guidelines
+Fork the repository.
+Create a new branch.
+Make your changes and create a pull request.
+License
+This project is licensed under the MIT License. See LICENSE for details.
 
-Submit the refactored version of the "Book Connect" application, including all HTML, CSS, and JavaScript files. Ensure that your code is well-documented and adheres to the specified Styleguides. Include a written report covering the discussion and reflection points outlined above.
-
-Make sure to submit your project to the LMS on the DJS03 Project Tab.
+Happy coding, and enjoy discovering books with Book Connect! 📚
