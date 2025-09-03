@@ -1,4 +1,4 @@
-# BookConnect Web Components
+# Book Connect Web Components
 
 ## Project Overview
 
